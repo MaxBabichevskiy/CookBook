@@ -68,3 +68,12 @@ C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Microsoft.EntityFramewor
 C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
 C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.xml
+C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Prism.dll
+C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Prism.Wpf.dll
+C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Prism.pdb
+C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Prism.xml
+C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Prism.Wpf.pdb
+C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Prism.Wpf.xml
