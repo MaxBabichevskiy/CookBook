@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace CookBook.Models
 {
-    internal class Recipe
+    public class Recipe
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public string Cuisine { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
+        public List<Step> Steps { get; set; }
     }
 }
