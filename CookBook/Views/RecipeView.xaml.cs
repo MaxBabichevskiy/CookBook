@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CookBook.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CookBook.Views
@@ -18,11 +18,17 @@ namespace CookBook.Views
     /// <summary>
     /// Логика взаимодействия для RecipeView.xaml
     /// </summary>
-    public partial class RecipeView : Page
+    public partial class RecipeView : Window
     {
         public RecipeView()
         {
             InitializeComponent();
+        }
+
+        public RecipeView(RecipeViewModel viewModel)
+        {
+            InitializeComponent();
+            DataContext = viewModel;
         }
     }
 }
