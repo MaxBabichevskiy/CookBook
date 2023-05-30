@@ -18,7 +18,8 @@ namespace CookBook
         {
             InitializeComponent();
 
-            viewModel = new MainViewModel();
+            recipeRepository = new RecipeRepository();
+            viewModel = new MainViewModel(recipeRepository);
             DataContext = viewModel;
 
             // Загрузка списка рецептов
