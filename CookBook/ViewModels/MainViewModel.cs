@@ -21,6 +21,7 @@ namespace CookBook.ViewModels
             LoadRecipes();
         }
 
+
         private ObservableCollection<Recipe> _recipes;
         public ObservableCollection<Recipe> Recipes
         {
@@ -39,7 +40,7 @@ namespace CookBook.ViewModels
         public DelegateCommand UpdateRecipeCommand => new DelegateCommand(UpdateRecipe, CanUpdateOrDeleteRecipe);
         public DelegateCommand DeleteRecipeCommand => new DelegateCommand(DeleteRecipe, CanUpdateOrDeleteRecipe);
 
-        private void LoadRecipes()
+        public void LoadRecipes()
         {
             Recipes = new ObservableCollection<Recipe>(_context.Recipes.ToList());
         }
