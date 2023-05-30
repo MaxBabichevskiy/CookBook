@@ -13,17 +13,18 @@ namespace CookBook
     public partial class MainWindow : Window
     {
         private MainViewModel viewModel;
+        private RecipeRepository recipeRepository;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            recipeRepository = new RecipeRepository();
-            viewModel = new MainViewModel(recipeRepository);
+            CookBookContext context = new CookBookContext();
+            viewModel = new MainViewModel(context);
             DataContext = viewModel;
 
             // Загрузка списка рецептов
-            LoadRecipes();
+            LoadRecipes(); 
         }
 
 

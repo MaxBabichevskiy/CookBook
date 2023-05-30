@@ -14,6 +14,12 @@ namespace CookBook.ViewModels
     {
         private Recipe _recipe;
 
+        public RecipeViewModel(Recipe recipe)
+        {
+            _recipe = recipe;
+            // Инициализация свойств RecipeViewModel на основе переданного рецепта
+        }
+
         public Recipe Recipe
         {
             get { return _recipe; }
