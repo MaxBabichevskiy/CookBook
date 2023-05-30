@@ -14,22 +14,21 @@ namespace CookBook
     {
         private MainViewModel viewModel;
         private RecipeRepository recipeRepository;
+        private readonly CookBookContext context;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            CookBookContext context = new CookBookContext();
-            viewModel = new MainViewModel(context);
-            DataContext = viewModel;
+            context = new CookBookContext();
+            recipeRepository = new RecipeRepository(context);
 
-            // Загрузка списка рецептов
-            LoadRecipes(); 
+            DataContext = new MainViewModel(context, recipeRepository);
         }
 
 
 
-        private void LoadRecipes()
+        private async void LoadRecipes() // Изменяем метод на асинхронный
         {
             try
             {
@@ -37,7 +36,8 @@ namespace CookBook
                 viewModel.Recipes.Clear();
 
                 // Получить список рецептов из базы данных или другого источника данных
-                List<Recipe> recipes = recipeRepository.GetRecipes();
+                List<Recipe> recipes = await recipeRepository.GetRecipesAsync();
+                // Используем асинхронный метод
 
                 // Добавить полученные рецепты в список
                 foreach (Recipe recipe in recipes)
@@ -58,6 +58,8 @@ namespace CookBook
             RecipeWindow recipeWindow = new RecipeWindow();
             recipeWindow.DataContext = new RecipeViewModel();
             recipeWindow.ShowDialog();
+            recipeWindow.Show();
+
 
             // После закрытия окна можно выполнить необходимые действия
             // Например, обновить список рецептов
@@ -88,6 +90,7 @@ namespace CookBook
                 // Логика удаления рецепта
             }
         }
+
 
         private void SearchRecipes_Click(object sender, RoutedEventArgs e)
         {

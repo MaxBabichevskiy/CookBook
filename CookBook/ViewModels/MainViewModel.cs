@@ -14,17 +14,15 @@ namespace CookBook.ViewModels
     public class MainViewModel : BindableBase
     {
         private readonly CookBookContext _context;
-        public MainViewModel(CookBookContext context)
+        private RecipeRepository _recipeRepository;
+        public MainViewModel(CookBookContext context, RecipeRepository recipeRepository)
         {
             _context = context;
+            _recipeRepository = recipeRepository;
             LoadRecipes();
         }
 
-        public MainViewModel()
-        {
-            _context = new CookBookContext();
-            LoadRecipes();
-        }
+        
 
 
         private ObservableCollection<Recipe> _recipes;
