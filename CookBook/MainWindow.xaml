@@ -24,9 +24,9 @@
 
         <!-- Верхняя панель с кнопками -->
         <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="2">
-            <Button Content="Добавить рецепт" Margin="10,10,10,10" Click="AddRecipe_Click"/>
-            <Button Content="Изменить рецепт" Margin="10,10,10,10" Click="EditRecipe_Click"/>
-            <Button Content="Удалить рецепт" Margin="10,10,10,10" Click="DeleteRecipe_Click"/>
+            <Button Content="Добавить рецепт" Margin="10,10,10,10" Command="{Binding AddRecipeCommand}"/>
+            <Button Content="Изменить рецепт" Margin="10,10,10,10" Command="{Binding UpdateRecipeCommand}" CommandParameter="{Binding SelectedRecipe}"/>
+            <Button Content="Удалить рецепт" Margin="10,10,10,10" Command="{Binding DeleteRecipeCommand}" CommandParameter="{Binding SelectedRecipe}"/>
         </StackPanel>
 
         <!-- Категории рецептов -->

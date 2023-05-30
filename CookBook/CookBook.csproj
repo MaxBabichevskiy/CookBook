@@ -144,11 +144,15 @@
     </ApplicationDefinition>
     <Compile Include="Models\CookBookContext.cs" />
     <Compile Include="Models\Ingredient.cs" />
+    <Compile Include="Models\RecipeRepository.cs" />
     <Compile Include="Models\Step.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RecipeViewModel.cs" />
     <Compile Include="Views\RecipeView.xaml.cs">
       <DependentUpon>RecipeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecipeWindow.xaml.cs">
+      <DependentUpon>RecipeWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -164,6 +168,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\RecipeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RecipeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

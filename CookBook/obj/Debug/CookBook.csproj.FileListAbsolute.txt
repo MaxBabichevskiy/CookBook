@@ -77,3 +77,4 @@ C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Prism.pdb
 C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Prism.xml
 C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Prism.Wpf.pdb
 C:\Users\babic\source\repos\CookBook\CookBook\bin\Debug\Prism.Wpf.xml
+C:\Users\babic\source\repos\CookBook\CookBook\obj\Debug\Views\RecipeWindow.g.cs
