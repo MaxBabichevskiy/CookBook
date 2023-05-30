@@ -45,6 +45,9 @@ namespace CookBook
             // Логика поиска рецептов
         }
 
-        
+        private void txtSearchName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

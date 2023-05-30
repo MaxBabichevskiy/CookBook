@@ -10,20 +10,27 @@
         <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Window.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="369*"/>
+            <ColumnDefinition Width="31*"/>
+        </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        
+
         <!-- Верхняя панель с кнопками -->
-        <StackPanel Orientation="Horizontal" Margin="10">
-            <Button Content="Добавить рецепт"  Click="AddRecipe_Click"/>
-            <Button Content="Изменить рецепт" Click="EditRecipe_Click"/>
-            <Button Content="Удалить рецепт" Click="DeleteRecipe_Click"/>
+        <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="2">
+            <Button Content="Добавить рецепт" Margin="10,10,10,10" Click="AddRecipe_Click"/>
+            <Button Content="Изменить рецепт" Margin="10,10,10,10" Click="EditRecipe_Click"/>
+            <Button Content="Удалить рецепт" Margin="10,10,10,10" Click="DeleteRecipe_Click"/>
         </StackPanel>
 
         <!-- Категории рецептов -->
-        <ListBox Grid.Row="1" ItemsSource="{Binding Recipes}" SelectedItem="{Binding SelectedRecipe}" Margin="10">
+        <ListBox Grid.Row="1" ItemsSource="{Binding Recipes}" SelectedItem="{Binding SelectedRecipe}" Margin="10,10,10,10" Grid.ColumnSpan="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}"/>
@@ -32,7 +39,7 @@
         </ListBox>
 
         <!-- Панель с информацией о выбранном рецепте -->
-        <StackPanel Grid.Row="1" Margin="10" Visibility="{Binding IsRecipeSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <StackPanel Grid.Row="1" Margin="10,10,10,10" Visibility="{Binding IsRecipeSelected, Converter={StaticResource BooleanToVisibilityConverter}}" Grid.ColumnSpan="2">
             <TextBlock Text="{Binding SelectedRecipe.Name}" FontWeight="Bold" FontSize="18"/>
             <TextBlock Text="{Binding SelectedRecipe.Cuisine}" Margin="0,5"/>
             <TextBlock Text="{Binding SelectedRecipe.Type}" Margin="0,5"/>
@@ -40,13 +47,13 @@
             <TextBlock Text="{Binding SelectedRecipe.Instructions}" TextWrapping="Wrap" Margin="0,10"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Margin="10" Visibility="{Binding IsSearchVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <StackPanel Grid.Row="1" Margin="10,10,10,10" Visibility="{Binding IsSearchVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Grid.ColumnSpan="2">
             <TextBlock Text="Поиск рецептов" FontWeight="Bold" FontSize="18" Margin="0,0,0,10"/>
 
             <!-- Поле поиска по названию -->
             <StackPanel Orientation="Horizontal" Margin="0,5">
                 <TextBlock Text="Название:" VerticalAlignment="Center"/>
-                <TextBox x:Name="txtSearchName" Width="200" Height="30" Margin="5,0,0,0" TextChanged="txtSearchName_TextChanged"/>
+                <TextBox x:Name="txtSearchName" Width="200" Height="30" Margin="27,0,0,0" TextChanged="txtSearchName_TextChanged"/>
             </StackPanel>
 
             <!-- Поле поиска по ингредиентам -->
@@ -58,7 +65,7 @@
             <!-- Поле поиска по кухне -->
             <StackPanel Orientation="Horizontal" Margin="0,5">
                 <TextBlock Text="Кухня:" VerticalAlignment="Center"/>
-                <TextBox x:Name="txtSearchCuisine" Width="200" Height="30" Margin="5,0,0,0"/>
+                <TextBox x:Name="txtSearchCuisine" Width="200" Height="30" Margin="48,0,0,0"/>
             </StackPanel>
 
             <Button Content="Поиск" Click="SearchRecipes_Click" Margin="0,10"/>
