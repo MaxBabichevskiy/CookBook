@@ -22,9 +22,6 @@ namespace CookBook.ViewModels
             LoadRecipes();
         }
 
-        
-
-
         private ObservableCollection<Recipe> _recipes;
         public ObservableCollection<Recipe> Recipes
         {
@@ -55,7 +52,6 @@ namespace CookBook.ViewModels
             set
             {
                 _newRecipeName = value;
-                OnPropertyChanged(nameof(NewRecipeName));
             }
         }
 
@@ -66,7 +62,6 @@ namespace CookBook.ViewModels
             set
             {
                 _newRecipeType = value;
-                OnPropertyChanged(nameof(NewRecipeType));
             }
         }
 
@@ -77,7 +72,6 @@ namespace CookBook.ViewModels
             set
             {
                 _newRecipeCuisine = value;
-                OnPropertyChanged(nameof(NewRecipeCuisine));
             }
         }
 
@@ -88,7 +82,6 @@ namespace CookBook.ViewModels
             set
             {
                 _newRecipeIngredients = value;
-                OnPropertyChanged(nameof(NewRecipeIngredients));
             }
         }
 
@@ -99,20 +92,17 @@ namespace CookBook.ViewModels
             set
             {
                 _newRecipeSteps = value;
-                OnPropertyChanged(nameof(NewRecipeSteps));
             }
         }
 
         private void AddRecipe()
         {
-            // Логика добавления нового рецепта
 
-            // Создание нового рецепта
             Recipe newRecipe = new Recipe
             {
-                Name = NewRecipeName, // Предполагается, что у вас есть свойство NewRecipeName, содержащее название нового рецепта
-                Type = NewRecipeType, // Предполагается, что у вас есть свойство NewRecipeType, содержащее тип нового рецепта
-                Cuisine = NewRecipeCuisine, // Предполагается, что у вас есть свойство NewRecipeCuisine, содержащее кухню нового рецепта
+                Name = NewRecipeName, 
+                Type = NewRecipeType, 
+                Cuisine = NewRecipeCuisine, 
             };
 
             // Добавление ингредиентов в новый рецепт
@@ -158,20 +148,9 @@ namespace CookBook.ViewModels
             NewRecipeSteps = string.Empty;
         }
 
-
-        private void UpdateRecipe()
-        {
-            // Логика обновления выбранного рецепта
-        }
-
         private bool CanUpdateOrDeleteRecipe()
         {
             return SelectedRecipe != null;
-        }
-
-        private void DeleteRecipe()
-        {
-            // Логика удаления выбранного рецепта
         }
     }
 }

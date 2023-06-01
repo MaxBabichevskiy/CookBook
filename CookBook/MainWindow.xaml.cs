@@ -59,9 +59,6 @@ namespace CookBook
             recipeWindow.ShowDialog();
             recipeWindow.Show();
 
-
-            // После закрытия окна можно выполнить необходимые действия
-            // Например, обновить список рецептов
             LoadRecipes();
         }
 
@@ -75,8 +72,6 @@ namespace CookBook
                 recipeWindow.DataContext = new RecipeViewModel(viewModel.SelectedRecipe);
                 recipeWindow.ShowDialog();
 
-                // После закрытия окна можно выполнить необходимые действия
-                // Например, обновить список рецептов
                 LoadRecipes();
             }
         }
@@ -103,12 +98,26 @@ namespace CookBook
 
         private void SearchRecipes_Click(object sender, RoutedEventArgs e)
         {
-            // Логика поиска рецептов
+            // Выполняем поиск рецептов по заданным критериям
+            string searchCriteria = txtSearchName.Text; 
+
+            // Выполняем поиск рецептов
+            List<Recipe> searchResults = recipeRepository.SearchRecipes(searchCriteria);
+
+            // Очищаем текущий список рецептов
+            viewModel.Recipes.Clear();
+
+            // Добавляем найденные рецепты в список
+            foreach (Recipe recipe in searchResults)
+            {
+                viewModel.Recipes.Add(recipe);
+            }
         }
 
         private void txtSearchName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // Логика поиска рецептов по названию
+            // Обновляем список рецептов при изменении текста в поле поиска
+            SearchRecipes_Click(sender, e);
         }
     }
 }
